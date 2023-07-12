@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+
+
+  h1{
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .box{
+    border: 1px solid black;
+    width: 500px;
+    height: 450px;
+    position: relative;
+    left: 950px;
+    top: 100px;
+    
+  }
+
+  .inpp{
+    position: relative;
+    left: 110px;
+  }
+
+  input{
+    width: 240px;
+  }
+  
+  button{
+    width: 150px;
+    position: relative;
+    left: 150px;
+  }
+
+  .box2{
+    position: relative;
+    top: 20px;
+   right: 25px;
+  }

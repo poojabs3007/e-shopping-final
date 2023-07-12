@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+
+.navbar{
+border: 1px solid black;
+height: 50px;
+background-color: black;
+display: flex;
+justify-content: space-evenly;
+}
+
+
+.i1{
+    color: white;
+}
+
+#cart1{
+    position: relative;
+    left: 70px;
+}
+
+.item1{
+    position: relative;
+left: 45px;
+top: 38px;
+
+}
+
+.mini1{
+    /* border: 1px solid rgb(207, 202, 202); */
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.438);
+    width: 320px;
+    height: 530px;
+position: relative;
+top: 30px;
+left: 38px;
+}
+
+.mini2{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 500px;
+left: 410px;
+}
+
+
+.mini3{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 1030px;
+left: 780px;
+}
+
+
+.mini4{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 1559px;
+left: 1155px;
+}
+
+.mini5{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 1530px;
+left: 38px;
+}
+
+.mini6{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 2060px;
+left: 410px;
+}
+
+.mini7{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 2590px;
+left: 780px;
+}
+
+.mini8{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 3118px;
+left: 1155px;
+}
+
+.mini9{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 3080px;
+left: 38px;
+}
+
+.mini10{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 3610px;
+left: 410px;
+}
+
+.mini11{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 4140px;
+left: 780px;
+}
+
+.mini12{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 4667px;
+left: 1155px;
+}
+
+.mini13{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 4630px;
+left: 38px;
+}
+
+.mini14{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 5157px;
+left: 410px;
+}
+
+.mini15{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 5687px;     
+left: 780px;
+}
+
+.mini16{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 6215px;
+left: 1155px;
+}
+
+.mini17{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 6180px;
+left: 38px;
+}
+
+.mini18{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 6710px;
+left: 410px;
+}
+
+.mini19{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 7238px;     
+left: 780px;
+}
+
+.mini20{
+    border: 1px solid rgb(207, 202, 202);
+    width: 320px;
+    height: 530px;
+position: relative;
+bottom: 7763px;  
+left: 1155px;
+}

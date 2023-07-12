@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+
+.nav{
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+    background-color: black;
+}
+
+
+.ll{
+    position: relative;
+    top: 13PX;
+   
+}
+
+.hom{
+    position: relative;
+    left: 600px;
+    top: 13PX;
+}
+
+.abou{
+    position: relative;
+    left: 420px;
+    top: 13PX;
+}
+
+.sig{
+    position: relative;
+    left: 240px;
+    top: 13PX;
+}
+
+.log{
+    position: relative;
+    left: 50PX;
+    top: 13PX;
+}
+
+
+
+.items{
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #282b45;
+    
+    
+}
+
+.item1{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item2{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item3{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item4{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item5{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item6{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.item7{
+    position: relative;
+    top: 13PX;
+    color: white;
+    text-decoration: none;
+}
+
+.coll1{
+    border: 1px solid white;
+    width: 380px;
+    position: relative;
+    top: 15px;
+    left: 30px;
+    color: black;
+    background-color: white;
+    
+    
+}
+
+
+.coll2{
+    border: 1px solid white;
+    width: 380px;
+    position: relative;
+   bottom: 350px;
+ left: 480px;
+    color: black;
+    background-color: white;
+    
+    
+}
+
+.coll3{
+    border: 1px solid white;
+    width: 380px;
+    position: relative;
+   bottom: 680px;
+ left: 930px;
+    color: black;
+    background-color: white;
+    
+    
+}
+
+.bott1{
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: hsl(214, 27%, 26%);
+    position: relative;
+    bottom: 600px;
+
+}
+
+.a1{
+    color: whitesmoke;
+}
+
+.bott2{
+    border: 1px solid black;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color:#232F3E;
+    position: relative;
+    bottom: 600px;
+
+}
+
+.bott2 pre{
+    position: relative;
+    right: 450px;
+top: 40px;
+}
+
+.bott3{
+    position: relative;
+    left: 190px;
+top: 40px;
+}
+
+#card card-body{
+    position: relative;
+    top: 100px;
+    right: 50px;
+}
