@@ -40,7 +40,7 @@
             border-radius: 10px;
         
             
-            background-color: rgb(110, 107, 107);
+            /* background-color: rgb(110, 107, 107); */
             /* text-align: center;
             border-top-right-radius: 0.5em;
             border-top-left-radius: 0.5em; */
@@ -71,38 +71,65 @@
                 top: 1em;
                  border-radius: 1em;
         }
+        ::placeholder{
+            position: relative;
+left: 5px;
+        }
+       /* body{
+        background-image: url("https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNob3BwaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+        background-repeat: no-repeat;
+        background-size: 100% 100vh;
+       } */
     </style>
 </head>
 <body>
-	<h1>${pass}</h1>
-	<h1>${fail}</h1>
-        <form action="/customer/signup" method="post">
-        <h1 class="header" style="color: white;">SignUp</h1>
+		<h1 id="successMessage" style="color: green">${pass}</h1>
+	<h1 id="failMessage" style="color: red">${fail}</h1>
+	<script>
+	// Get the success and fail message elements
+	var successMessage = document.getElementById("successMessage");
+	var failMessage = document.getElementById("failMessage");
+
+	// Check if the success message exists and display it as a pop-up alert
+	if (successMessage.innerText !== "") {
+		window.alert(successMessage.innerText);
+		successMessage.style.display = "none"; // Hide the success message element
+	}
+
+	// Check if the fail message exists and display it as a pop-up alert
+	if (failMessage.innerText !== "") {
+		window.alert(failMessage.innerText);
+		failMessage.style.display = "none"; // Hide the fail message element
+	}
+</script>
+        <form action="/customer/signup" method="post" style="background-image: linear-gradient(to top left,#A78295,#97FEED);">
+          
+        <h1 class="header" style="color: #331D2C;">SignUp</h1>
         <table cellspacing="20em">
             <tr>
                 <td class="td1"><label for="name"><strong>First Name :</strong></label></td>
-                <td><input type="text" name="fname" id="name"></td>
+                <td><input type="text" name="fname" id="name" placeholder="First Name"></td>
             </tr>
             <tr>
                 <td class="td1"><label for="lname"><strong>Last Name :</strong></label></td>
-                <td><input type="text" name="lname" id="lname"></td>
+                <td><input type="text" name="lname" id="lname" placeholder="Last Name"></td>
             </tr>
             <tr>
                 <td class="td1"><label for="mno"><strong>Mobile No :</strong></label></td>
-                <td><input type="text" name="mno" id="mno"></td>
+                <td><input type="text" name="mno" id="mno" placeholder="Mobile No"></td>
             </tr>
             <tr>
                 <td class="td1"><label for="email"><strong> Email-Id :</strong></label></td>
-                <td><input type="email" name="email" id="email"></td>
+                <td><input type="email" name="email" id="email" placeholder="Email-Id"></td>
             </tr>
             <tr>
                 <td class="td1"><label for="pwd"><strong>Password :</strong></label></td>
-                <td><input type="password" name="pwd" id="pwd"></td>
+                <td><input type="password" name="pwd" id="pwd" placeholder="Password"></td>
             </tr>
             <tr>
                 <td class="td1"><label for="cpwd"><strong> Confirm <br>
                     Password </strong>:</label></td>
-                <td><input type="password" name="" id="cpwd"></td>
+                <td><input type="password" name="" id="cpwd" placeholder="Confirm Password"></td>
             </tr>
             
             <tr>

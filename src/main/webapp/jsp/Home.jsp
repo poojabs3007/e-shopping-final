@@ -36,6 +36,7 @@ a {
 	align-items: center;
 	position: fixed;
 	z-index: 234567;
+	top: 0;
 }
 
 .cart {
@@ -163,7 +164,8 @@ h1 {
 	display: flex;
 	justify-content: space-around;
 	position: relative;
-	top: 15em;
+	top: 40em;
+
 }
 
 .footer_image {
@@ -181,11 +183,30 @@ a {
 	font-size: 1.8em;
 	position: relative;
 }
+
 </style>
 </head>
 <body>
-	<h1>${pass}</h1>
-	<h1>${fail}</h1>
+	<h1 id="successMessage" style="color: green">${pass}</h1>
+	<h1 id="failMessage" style="color: red">${fail}</h1>
+	<script>
+	// Get the success and fail message elements
+	var successMessage = document.getElementById("successMessage");
+	var failMessage = document.getElementById("failMessage");
+
+	// Check if the success message exists and display it as a pop-up alert
+	if (successMessage.innerText !== "") {
+		window.alert(successMessage.innerText);
+		successMessage.style.display = "none"; // Hide the success message element
+	}
+
+	// Check if the fail message exists and display it as a pop-up alert
+	if (failMessage.innerText !== "") {
+		window.alert(failMessage.innerText);
+		failMessage.style.display = "none"; // Hide the fail message element
+	}
+</script>
+	
 	<div id="nav_bar">
 		<div class="cart">
 			<a href="/admin/login" class="cart"><img src="car.png"
@@ -252,7 +273,7 @@ a {
 	</section>
 
 	<div id="carouselExampleSlidesOnly" class="carousel slide"
-		data-bs-ride="carousel">
+		data-bs-ride="carousel" style="position: absolute; bottom: 100px;">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="../images/bb1.avif" class="d-block w-100" alt="..." height="500em">
@@ -312,7 +333,23 @@ a {
 	</footer>
 
 
+<script>
+	// Get the success and fail message elements
+	var successMessage = document.getElementById("successMessage");
+	var failMessage = document.getElementById("failMessage");
 
+	// Check if the success message exists and display it as a pop-up alert
+	if (successMessage.innerText !== "") {
+		window.alert(successMessage.innerText);
+		successMessage.style.display = "none"; // Hide the success message element
+	}
+
+	// Check if the fail message exists and display it as a pop-up alert
+	if (failMessage.innerText !== "") {
+		window.alert(failMessage.innerText);
+		failMessage.style.display = "none"; // Hide the fail message element
+	}
+</script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
