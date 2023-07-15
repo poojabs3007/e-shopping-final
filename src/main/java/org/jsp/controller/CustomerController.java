@@ -1,6 +1,9 @@
 package org.jsp.controller;
 
 import org.jsp.dto.Customer;
+import org.jsp.helper.OtpDto;
+import org.jsp.helper.Otp_service;
+import org.jsp.helper.SendMail;
 import org.jsp.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -20,6 +24,10 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
+	@Autowired
+	Otp_service otp_service;
+	@Autowired
+	SendMail mail;
 
 	@GetMapping("/signup")
 	public String gotoSignup() {
@@ -65,5 +73,23 @@ public class CustomerController {
 	@PostMapping("/billing")
 	public String billing(HttpSession session, ModelMap model, @RequestParam String payment) {
 		return customerService.billing(session, model, payment);
+	}
+
+	@PostMapping("/search")
+	public String search(@RequestParam String product, ModelMap map) {
+		return customerService.search(product, map);
+	}
+
+	@PostMapping("verify")
+	public String verify(@RequestParam int otp, @RequestParam String email, Customer customer, ModelMap model)
+			throws Exception {
+		return customerService.verify(otp, email, customer, model);
+	}
+
+	@GetMapping("/resend/{email}")
+	public String resend(Customer customer, @PathVariable String email, ModelMap map) {
+		OtpDto otpDto = otp_service.createAndSaveOTP(customer.getEmail());
+		mail.send(customer.getEmail(), otpDto, customer);
+		return customerService.resend(customer, otpDto.getOtp(), email, map);
 	}
 }

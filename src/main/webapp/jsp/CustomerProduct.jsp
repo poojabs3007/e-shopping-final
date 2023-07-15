@@ -15,6 +15,7 @@
 						<link rel="preconnect" href="https://fonts.googleapis.com">
 						<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 						<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 							rel="stylesheet"
@@ -219,11 +220,11 @@
 	}
 </script>
 						<div id="nav_bar">
-							<div class="cart">
+							<!-- <div class="cart">
 								<a href="./admincart.html" class="cart"><img src="car.png" alt="cart" width="25em"
 										height="25em" style="border-radius: 5em;">
 								</a>
-							</div>
+							</div> -->
 							<div class="admin">
 								<a href="/admin/login" class="admin" style="text-decoration: none;">Admin</a>
 							</div>
@@ -236,6 +237,13 @@
 								<h1 id="headt" style="font-style: oblique;">Shoppers choice</h1>
 
 							</div>
+							<div id="nav_child2">
+								<form action="/customer/search" method="post">
+								<input type="search" placeholder="Search" name="product"><button href="" style="background-color: white;border:none; width: 25px; position: absolute;left:40%;top:35%" >
+							<i style="color: black; position: relative ;right:20%" class="fa-solid fa-magnifying-glass"></i>
+								</button>
+								</form>
+								</div>
 							<div id="nav_child2">
 								<div class="nav_child">
 									<a href="/" style="text-decoration: none; color: black;">Home</a>
@@ -265,12 +273,12 @@
 							</div>
 							<% } else { %>
 								<div id="nav_child3">
-									<a href="/customer/cart" class="cart"><img src="car.png" alt="cart" width="30em"
+									<a href="/customer/cart" class="cart"><img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="cart" width="30em"
 											height="30em" style="border-radius: 5em;">
 									</a>
 								</div>
 								<div>
-									<a href="/logout" style="text-decoration: none; color: rgb(243, 236, 236);">Logout</a>
+									<a href="/logout" style="text-decoration: none; color:black;">Logout</a>
 								</div>
 								<% } %>
 
@@ -310,7 +318,7 @@
 													<%=prod.getPrice()%> &#8377
 												</h3>
 												<a href="/customer/addtocart?id=<%=prod.getId()%>"><button
-														style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 200px;">Add
+														style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 200px;z-index:10">Add
 														to cart</button></a>
 										</div>
 
@@ -340,19 +348,20 @@
 									<p>Saturday:10.00-19.00</p>
 
 									<div class="footer_image">
-										<a
-											href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D1007768%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMI5pnu1IH8_wIVrSeDAx1-4Q6tEAAYASAAEgJxTvD_BwE">
-											<img src="facebook.png" alt="" height="30px" width="30px"
-												class="footer_image1">
-										</a> <a href="https://www.instagram.com/accounts/login/"><img src="insta.png"
-												alt="" height="30px" width="30px" class="footer_image2"></a> <a
-											href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"><img
-												src="twitter.png" alt="" height="30px" width="30px"
-												class="footer_image3"></a> <a href="https://telegr.am/user_mgt/login">
-											<img src="telegram.png" alt="" height="30px" width="30px"
-												class="footer_image4"></a>
-									</div>
-
+					<a
+						href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D1007768%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMI5pnu1IH8_wIVrSeDAx1-4Q6tEAAYASAAEgJxTvD_BwE">
+						<img src="/main/webapp/images/facebook.png" alt="" height="30px" width="30px"
+						class="footer_image1">
+					</a> <a href="https://www.instagram.com/accounts/login/"><img
+						src="./images/insta.png" alt="" height="30px" width="30px"
+						class="footer_image2"></a> <a
+						href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"><img
+						src="./images/twitter.png" alt="" height="30px" width="30px"
+						class="footer_image3"></a> <a
+						href="https://telegr.am/user_mgt/login"> <img
+						src="./images/telegram.png" alt="" height="30px" width="30px"
+						class="footer_image4"></a>
+				</div>
 								</div>
 								<div class="item3">
 									<div class="head">Contact Us</div>

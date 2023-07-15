@@ -162,7 +162,7 @@ input[value="Submit"] {
 		failMessage.style.display = "none"; // Hide the fail message element
 	}
 </script>
-	<div id="nav_bar">
+	<!-- <div id="nav_bar">
 		<div class="cart">
 			<a href="" target="" class="cart"><img src="car.png"
 				alt="cart" width="25em" height="25em" style="border-radius: 5em;">
@@ -172,11 +172,11 @@ input[value="Submit"] {
 			<a href="./logadmin.html" target="" class="admin"
 				style="text-decoration: none;">Admin</a>
 		</div>
-	</div>
+	</div> -->
 
 
 
-	<section id="nav_main">
+	<!-- <section id="nav_main">
 		<div id="nav_child1">
 			<h1 style="font-style: oblique;">Shoppers choice</h1>
 
@@ -190,7 +190,7 @@ input[value="Submit"] {
 				<a href="/jsp/AboutUs.jsp" target=""
 					style="text-decoration: none; color: black;">About</a>
 		</div>
-	</section>
+	</section> -->
 
 
 	<div class="container-fluid">

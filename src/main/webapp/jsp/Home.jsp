@@ -8,9 +8,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <link rel="stylesheet" href="./pro.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
 	rel="stylesheet">
@@ -30,7 +33,7 @@ a {
 #nav_bar {
 	width: 100vw;
 	height: 3em;
-	background-color: rgb(110, 107, 107);
+	background-color: rgb(107, 21, 28);
 	display: flex;
 	justify-content: end;
 	align-items: center;
@@ -68,7 +71,8 @@ a {
 #nav_main {
 	width: 100vw;
 	height: 6em;
-	background-color: rgb(218, 205, 214);
+	background-color: black;
+	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -183,36 +187,25 @@ a {
 	font-size: 1.8em;
 	position: relative;
 }
+#shop{
+
+
+}
 
 </style>
 </head>
 <body>
 	<h1 id="successMessage" style="color: green">${pass}</h1>
 	<h1 id="failMessage" style="color: red">${fail}</h1>
-	<script>
-	// Get the success and fail message elements
-	var successMessage = document.getElementById("successMessage");
-	var failMessage = document.getElementById("failMessage");
-
-	// Check if the success message exists and display it as a pop-up alert
-	if (successMessage.innerText !== "") {
-		window.alert(successMessage.innerText);
-		successMessage.style.display = "none"; // Hide the success message element
-	}
-
-	// Check if the fail message exists and display it as a pop-up alert
-	if (failMessage.innerText !== "") {
-		window.alert(failMessage.innerText);
-		failMessage.style.display = "none"; // Hide the fail message element
-	}
-</script>
+	
 	
 	<div id="nav_bar">
-		<div class="cart">
-			<a href="/admin/login" class="cart"><img src="car.png"
+		<!-- <div class="cart">
+			<a href="/admin/login" class="cart"><img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
 				alt="cart" width="25em" height="25em" style="border-radius: 5em;">
 			</a>
-		</div>
+		</div> -->
+	
 		<div class="admin">
 			<a href="/admin/login" class="admin" style="text-decoration: none;">Admin</a>
 		</div>
@@ -223,15 +216,21 @@ a {
 	<section id="nav_main">
 		<div id="nav_child1">
 			<h1 id="headt" style="font-style: oblique;">Shoppers choice</h1>
-
+		</div>
+		<div id="nav_child2">
+		<form action="/customer/search" method="post">
+		<input type="search" placeholder="Search" name="product"><button href="" style="background-color: white;border:none; width: 25px; position: absolute;left:40%;top:35%" >
+	<i style="color: black; position: relative ;right:20%" class="fa-solid fa-magnifying-glass"></i>
+		</button>
+		</form>
 		</div>
 		<div id="nav_child2">
 			<div class="nav_child">
-				<a href="/" style="text-decoration: none; color: black;">Home</a>
+				<a href="/" style="text-decoration: none; color: white;">Home</a>
 			</div>
 			<div>
 				<a href="/customer/products"
-					style="text-decoration: none; color: black;">Products</a>
+					style="text-decoration: none; color: white;">Products</a>
 
 			</div>
 			<%
@@ -239,18 +238,18 @@ a {
 			if (customer == null) {
 			%>
 			<div>
-				<a href="/aboutus" style="text-decoration: none; color: black;">About</a>
+				<a href="/aboutus" style="text-decoration: none; color: white;">About</a>
 
 			</div>
 			
 			<div>
 				<a href="/customer/login"
-					style="text-decoration: none; color: black;">Login</a>
+					style="text-decoration: none; color: white;">Login</a>
 
 			</div>
 			<div>
 				<a href="/customer/signup"
-					style="text-decoration: none; color: black;">SignUp</a>
+					style="text-decoration: none; color: white;">SignUp</a>
 
 			</div>
 
@@ -259,7 +258,7 @@ a {
 		} else {
 		%>
 		<div id="nav_child3">
-			<a href="/customer/cart" class="cart"><img src="car.png"
+			<a href="/customer/cart" class="cart"><img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
 				alt="cart" width="30em" height="30em" style="border-radius: 5em;">
 			</a>
 		</div>
@@ -271,7 +270,7 @@ a {
 		%>
 
 	</section>
-
+<!-- 
 	<div id="carouselExampleSlidesOnly" class="carousel slide"
 		data-bs-ride="carousel" style="position: absolute; bottom: 100px;">
 		<div class="carousel-inner">
@@ -285,7 +284,59 @@ a {
 				<img src="./images/bb3.avif" class="d-block w-100" alt="..." height="500em">
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+		  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item">
+			<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+	
+			<div class="container">
+			  <div class="carousel-caption text-start">
+				<h1>Example headline.</h1>
+				<p>Some representative placeholder content for the first slide of the carousel.</p>
+				<p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="carousel-item active">
+			<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+	
+			<div class="container">
+			  <div class="carousel-caption">
+				<h1>Another example headline.</h1>
+				<p>Some representative placeholder content for the second slide of the carousel.</p>
+				<p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="carousel-item">
+			<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+	
+			<div class="container">
+			  <div class="carousel-caption text-end">
+				<h1>One more for good measure.</h1>
+				<p>Some representative placeholder content for the third slide of this carousel.</p>
+				<p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+
+
 	<!-- footer -->
 	<footer>
 		<div class="container">
@@ -363,5 +414,7 @@ a {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 		crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>

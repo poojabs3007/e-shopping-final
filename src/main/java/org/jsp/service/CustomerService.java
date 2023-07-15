@@ -3,11 +3,13 @@ package org.jsp.service;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.jsp.dto.Customer;
 import org.jsp.dto.Item;
 import org.jsp.dto.Product;
 import org.jsp.dto.ShoppingCart;
+import org.jsp.helper.OtpDto;
+import org.jsp.helper.Otp_service;
+import org.jsp.helper.SendMail;
 import org.jsp.repositiry.CustomerRepository;
 import org.jsp.repositiry.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,10 @@ public class CustomerService {
 	CustomerRepository customerRepository;
 	@Autowired
 	ProductRepository productRepository;
+	@Autowired
+	SendMail mail;
+	@Autowired
+	Otp_service otp_service;
 
 	public String signup(Customer customer, ModelMap model) {
 		Customer customer1 = null;
@@ -33,12 +39,15 @@ public class CustomerService {
 			customer1 = customerRepository.findByEmail(email);
 		}
 		if (customer1 == null) {
+			OtpDto otpDto = otp_service.createAndSaveOTP(customer.getEmail());
+			mail.send(customer.getEmail(), otpDto, customer);
 			customerRepository.save(customer);
-			model.put("pass", "Data Saved Succesfully");
-			return "Home";
+			model.put("pass", "Otp Has been Sent To Email");
+			model.put("customer", customer.getEmail());
+			return "Otp-verify";
 		} else {
 			model.put("fail", "Email or Mobile Already Exists");
-			return "AdminSignup";
+			return "CustomerLogin";
 		}
 
 	}
@@ -57,9 +66,17 @@ public class CustomerService {
 			return "CustomerLogin";
 		} else {
 			if (customer.getPwd().equals(password)) {
-				session.setAttribute("customer", customer);
-				model.put("pass", "Login Success");
-				return "Home";
+				if (customer.isOtpstatus()) {
+					session.setAttribute("customer", customer);
+					model.put("pass", "Login Success");
+					return "Home";
+				} else {
+					model.put("fail", "You Haven't Verified Your Account So Please Verify, Otp Has been Sent");
+					OtpDto otpDto = otp_service.createAndSaveOTP(customer.getEmail());
+					mail.send(customer.getEmail(), otpDto, customer);
+					model.put("customer", customer.getEmail());
+					return "Otp-verify";
+				}
 			} else {
 				model.put("fail", "Incorrect Password");
 				return "CustomerLogin";
@@ -166,7 +183,7 @@ public class CustomerService {
 			return "CustomerLogin";
 		} else {
 			List<Item> items = customer.getCart().getItems();
-			Product product = productRepository.findByName(name);
+			Product product = productRepository.findByName(name).get(0);
 			for (Item item : items) {
 				if (item.getName().equals(product.getName())) {
 					item1 = item;
@@ -207,4 +224,49 @@ public class CustomerService {
 		}
 	}
 
+	public String search(String product, ModelMap map) {
+		List<Product> list = (List<Product>) productRepository.findByName(product);
+		if (list.isEmpty()) {
+			map.put("fail", "No Product found");
+			return "Home";
+		} else {
+			map.put("list", list);
+			return "Search-product";
+		}
+	}
+
+	public String verify(int otp, String email, Customer customer, ModelMap model) {
+		Customer exist = customerRepository.findByEmail(email);
+		if (exist != null) {
+			OtpDto otp2 = otp_service.getOtp(email);
+			if (otp2 != null) {
+				boolean isvalid = otp_service.validateOTP(email, otp);
+				if (isvalid) {
+					model.put("customer", exist);
+					exist.setOtpstatus(true);
+					customerRepository.save(exist);
+//					mail.sendWelcomeMail(exist);
+					model.put("pass", "Account Created Sucessfully");
+					return "Home";
+				} else {
+					model.put("fail", "You Can Verify Your Email Using Login");
+					return "CustomerLogin";
+				}
+			} else {
+				model.put("fail", "You Can Verify Your Email Using Login");
+				return "CustomerLogin";
+			}
+		} else {
+			model.put("fail", "You Can Verify Your Email Using Login");
+			return "CustomerLogin";
+		}
+	}
+
+	public String resend(Customer customer, int otp, String email, ModelMap model) {
+//		ModelAndView view = new ModelAndView();
+//		view.setViewName("Otp-verify");
+		model.put("pass", "OTP sent to email. Please enter it to continue.");
+		model.put("customer", customer.getEmail());
+		return "Otp-verify";
+	}
 }

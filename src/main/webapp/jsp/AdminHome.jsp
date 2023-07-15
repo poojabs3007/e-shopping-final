@@ -102,9 +102,9 @@ form {
 		<nav>
 			<div class="container">
 				<div>
-					<a href="/jsp/AboutUs.jsp"
+					<a href="/jsp/Home.jsp"
 						style="text-decoration: none; font-size: 20px; color: black;">
-						About </a>
+						Home </a>
 				</div>
 			</div>
 		</nav>
@@ -118,6 +118,6 @@ form {
             <tr><td ><strong><button class="but1"><a href="/admin/customers" style="text-decoration: none;font-size: 18px;color: black;">view all customers</a></button></strong></td></tr>
         </table>
         
-		<a href="/logout"><button type="button">Logout</button></a>
+		<a href="/logout"><button type="button" style="position: relative; left: 35px; top: 30px;">Logout</button></a>
 </body>
 </html>

@@ -35,7 +35,7 @@
 	String payment = (String) request.getAttribute("payment");
 	double price = (double) request.getAttribute("price");
 	%>
-	<table>
+	<table border="2px">
 		<tr>
 			<th>Name</th>
 			<th>Product name</th>
@@ -57,7 +57,7 @@
 		}
 		%>
 	</table>
-	<h1>Totsl Price is : ${price} payment done through ${payment }</h1>
+	<h1>Total Price is : ${price} payment done through ${payment }</h1>
 	<button onclick="window.print()">print</button>
 </body>
 </html>

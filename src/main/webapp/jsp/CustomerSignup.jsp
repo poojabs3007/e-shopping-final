@@ -16,6 +16,11 @@
             align-items: center;
             background-image:url(../image/prbg2.jpg) ;
         }
+
+        .cont{
+            position: relative;
+            right: 7%;
+        }
         form{
             border: 2px solid;
             /* position: relative;
@@ -46,6 +51,7 @@
             border-top-left-radius: 0.5em; */
             
         }
+       
 
         .td1{
             text-align: right;
@@ -74,12 +80,14 @@
         ::placeholder{
             position: relative;
 left: 5px;
+
+
         }
-       /* body{
-        background-image: url("https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNob3BwaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+        body{
+        background-image: url("https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80");
         background-repeat: no-repeat;
         background-size: 100% 100vh;
-       } */
+       } 
     </style>
 </head>
 <body>
@@ -102,7 +110,7 @@ left: 5px;
 		failMessage.style.display = "none"; // Hide the fail message element
 	}
 </script>
-        <form action="/customer/signup" method="post" style="background-image: linear-gradient(to top left,#A78295,#97FEED);">
+        <form class="cont"action="/customer/signup" method="post" style="background-image: linear-gradient(to top left,#675D50,#FFCDA8);">
           
         <h1 class="header" style="color: #331D2C;">SignUp</h1>
         <table cellspacing="20em">

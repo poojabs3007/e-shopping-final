@@ -82,6 +82,8 @@ h1 {
 	font-family: 'Times New Roman', Times, serif;
 }
 
+
+
 .nav_child:hover {
 	color: red;
 }
@@ -141,6 +143,17 @@ input[value="Submit"] {
 	border-radius: 3px;
 	color: black;
 }
+.container-fluid{
+	position: relative;
+	top: 150px;
+	left: 10px;
+}
+
+body{
+        background-image: url("https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
+        background-repeat: no-repeat;
+        background-size: 100% 100vh;
+       }
 </style>
 </head>
 <body>
@@ -163,37 +176,37 @@ input[value="Submit"] {
 		failMessage.style.display = "none"; // Hide the fail message element
 	}
 </script>
-	<section id="nav_main">
-		<div id="nav_child1">
-			<h1 id="headt" style="font-style: oblique;">Shoppers choice</h1>
-
-		</div>
-		<div id="nav_child2">
-			<div class="nav_child">
-				<a href="/" style="text-decoration: none; color: black;">Home</a>
-			</div>
-			<div>
-				<a href="/customer/products"
-					style="text-decoration: none; color: black;">Products</a>
+		<!-- <section id="nav_main">
+			<div id="nav_child1">
+				<h1 id="headt" style="font-style: oblique;">Shoppers choice</h1>
 
 			</div>
-			<%
-			Customer customer = (Customer) session.getAttribute("customer");
-			if (customer == null) {
-			%>
-			<div>
-				<a href="/aboutus" style="text-decoration: none; color: black;">About</a>
+			<div id="nav_child2">
+				<div class="nav_child">
+					<a href="/" style="text-decoration: none; color: black;">Home</a>
+				</div>
+				<div>
+					<a href="/customer/products"
+						style="text-decoration: none; color: black;">Products</a>
 
-			</div>
-			
-			<div>
-				<a href="/customer/login"
-					style="text-decoration: none; color: black;">Login</a>
+				</div>
+				<%
+				Customer customer = (Customer) session.getAttribute("customer");
+				if (customer == null) {
+				%>
+				<div>
+					<a href="/aboutus" style="text-decoration: none; color: black;">About</a>
 
-			</div>
-			<div>
-				<a href="/customer/signup"
-					style="text-decoration: none; color: black;">SignUp</a>
+				</div>
+				
+				<div>
+					<a href="/customer/login"
+						style="text-decoration: none; color: black;">Login</a>
+
+				</div>
+				<div>
+					<a href="/customer/signup"
+						style="text-decoration: none; color: black;">SignUp</a>
 
 			</div>
 
@@ -213,17 +226,17 @@ input[value="Submit"] {
 		}
 		%>
 
-	</section>
+	</section> -->
 
 
 	<div class="container-fluid">
-		<form action="/customer/login" method="post">
+		<form action="/customer/login" method="post" style="background-image: linear-gradient();">
 			<table class="tab"
 				style="height: 300px; width: 300px; border-radius: 10px;">
 				<tr>
 					<th
-						style="font-size: 20px; font-style: normal; text-align: center;">
-						USER LOGIN</th>
+						style="font-size: 20px; font-style: normal; text-align: center; ">
+						USER LOGIN </th>
 				</tr>
 				<tr>
 
