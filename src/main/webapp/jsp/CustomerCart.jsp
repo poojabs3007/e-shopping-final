@@ -215,7 +215,7 @@ td {
 		} else {
 		%>
 		<div id="nav_child3">
-			<a href="/customer/cart" class="cart"><img src="car.png"
+			<a href="/customer/cart" class="cart"><img src="../images/car.png"
 				alt="cart" width="30em" height="30em" style="border-radius: 5em;">
 			</a>
 		</div>
@@ -271,7 +271,7 @@ td {
 			%>
 		</table>
 	</center>
-	<a href="/jsp/CusomerBill.jsp"><button type="submit">Place
+	<a href="/jsp/CusomerBill.jsp"><button type="submit" style="position: absolute;right: 100px;padding: 5px;outline: white solid  1px;background-color: black;color: white;">Place
 			Order</button></a>
 </body>
 </html>

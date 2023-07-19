@@ -95,10 +95,9 @@ table{
     <div class="main">
     <nav>
        <div class="container">
-        <div><a href="./pro.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
-        <div><a href="./About.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
-        <div><a href="./product.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
-        <div><a href="./adminoperation.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Admin Dashboard</a> </div>
+       <div><a href="../jsp/AdminHome.jsp" style="text-decoration: none;font-size: 20px;color: black;"> Admin Dashboard</a> </div>
+        <div><a href="/aboutus" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
+        <div><a href="/customer/products" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
        
       </div>
     </nav>

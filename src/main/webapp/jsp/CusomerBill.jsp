@@ -41,9 +41,9 @@
 			<center>
 			<label><h1>Payment mode</h1></label>
 		</center>
-			<input type="radio" name="payment" value="Paytm" id="payment" ;">Paytm <br><br>
+			<input type="radio" name="payment" value="upi" id="payment">UPI <br><br>
 			<div id="img1"></div>
-			 <input type="radio" name="payment"value="card" id="card">Card <br><br>
+			 <input type="radio" name="payment" value="card" id="card">Card <br><br>
 			 <div id="img">
 
 			 </div>

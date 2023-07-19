@@ -15,6 +15,9 @@
 	href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
 	rel="stylesheet">
 <style>
+	body{
+		overflow-y: hidden;
+	}
 a {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
@@ -121,6 +124,7 @@ h1 {
 	padding: 60px;
 	width: 100px;
 	height: 100px;
+	margin-bottom: 40px;
 }
 
 input[id="user"] {
@@ -230,18 +234,18 @@ body{
 
 
 	<div class="container-fluid">
-		<form action="/customer/login" method="post" style="background-image: linear-gradient();">
+		<form action="/customer/login" method="post" >
 			<table class="tab"
-				style="height: 300px; width: 300px; border-radius: 10px;">
+				style="height: 300px ;width: 300px; border-radius: 10px;background-image: linear-gradient(brown,grey);">
 				<tr>
 					<th
-						style="font-size: 20px; font-style: normal; text-align: center; ">
+						style="font-size: 20px; font-style: normal; text-align: center; position: relative;bottom: 20px;">
 						USER LOGIN </th>
 				</tr>
 				<tr>
 
 					<td><input type="text" name="user" id="user"
-						placeholder="Enter email/mobile"
+						placeholder="Enter email"
 						style="width: 200px; height: 25px; font-size: 12px; background-color: lightgoldenrodyellow;">
 					</td>
 
@@ -260,6 +264,7 @@ body{
 							style="width: 50px; height: 30px; font-size: 18px; background-color: orange; border-style: none; width: 200px; border-radius: 2px;">
 							<a style="text-decoration: none; color: white">Login</a>
 						</button>
+						<a href="/customer/signup" style="color: black; position: relative; left: 36%; top: 20px; font-weight: 800;">SignUp?</a>
 					</td>
 
 				</tr>
@@ -268,6 +273,35 @@ body{
 		</form>
 	</div>
 
+<script>
+	 let email=document.getElementById('user').value;
+           if(email=="")
+         {
+            document.getElementById('user').innerHTML="email cant be empty";
+            return false;
+         }
+         if(email.indexOf('@')<=0)
+         {
+            document.getElementById('user').innerHTML="invalid @ Position";
+            return false;
+         }
+         if((email.charAt(email.length-4)!='.')||(email.charAt(email.length-3)!='.'))
+         {
+            document.getElementById('user').innerHTML="invalid . position"
+         }
 
+
+		 let pass=document.getElementById('pass').value;
+           if(pass=="")
+        {
+            document.getElementById('password').innerHTML="password cant be empty";
+            return false;
+        }
+        if((pass.length<=2)||(pass.length>20))
+        {
+            document.getElementById('password').innerHTML="password must be between 2 to 20";
+            return false;
+        }
+</script>
 </body>
 </html>

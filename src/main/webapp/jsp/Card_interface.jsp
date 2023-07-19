@@ -8,12 +8,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cash on Delivery</title>
+<title>Card</title>
 </head>
 <body>
 		<h1 id="successMessage" style="color: green">${pass}</h1>
 	<h1 id="failMessage" style="color: red">${fail}</h1>
-	
+	<script>
+	// Get the success and fail message elements
+	var successMessage = document.getElementById("successMessage");
+	var failMessage = document.getElementById("failMessage");
+
+	// Check if the success message exists and display it as a pop-up alert
+	if (successMessage.innerText !== "") {
+		window.alert(successMessage.innerText);
+		successMessage.style.display = "none"; // Hide the success message element
+	}
+
+	// Check if the fail message exists and display it as a pop-up alert
+	if (failMessage.innerText !== "") {
+		window.alert(failMessage.innerText);
+		failMessage.style.display = "none"; // Hide the fail message element
+	}
+</script>
 	<%
 	Customer customer = (Customer) request.getAttribute("customer");
 	String payment = (String) request.getAttribute("payment");
@@ -41,31 +57,8 @@
 		}
 		%>
 	</table>
-	<h2>Delivery Address</h2>
-	<h3><%=customer.getAddress()%></h3>
-	<h1>Total Price is : ${price} Payment is Going Through Cash on Delivery</h1>
-	<button>Confirm Order &#8377 ${price}</button>
+	<h1>Total Price is : ${price} Payment is Going Through Card</h1>
+	<a href="../jsp/Card.jsp"><button>pay &#8377 ${price}</button></a>
 	<button onclick="window.print()">print</button>
-
-	
-
-	<script>
-		// Get the success and fail message elements
-		var successMessage = document.getElementById("successMessage");
-		var failMessage = document.getElementById("failMessage");
-	
-		// Check if the success message exists and display it as a pop-up alert
-		if (successMessage.innerText !== "") {
-			window.alert(successMessage.innerText);
-			successMessage.style.display = "none"; // Hide the success message element
-		}
-	
-		// Check if the fail message exists and display it as a pop-up alert
-		if (failMessage.innerText !== "") {
-			window.alert(failMessage.innerText);
-			failMessage.style.display = "none"; // Hide the fail message element
-		}
-	</script>
 </body>
 </html>
-

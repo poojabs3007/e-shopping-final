@@ -23,6 +23,7 @@ public class Customer {
 	long mno;
 	String email;
 	String pwd;
+	String address;
 	boolean otpstatus;
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	ShoppingCart cart;

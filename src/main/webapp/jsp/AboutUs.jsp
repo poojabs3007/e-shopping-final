@@ -24,6 +24,9 @@
 				width: 100%;
 				background-color: #6c757d;
 			  }
+			  body{
+				overflow-x: hidden;
+			  }
 			  #nav_child2{
 				display: flex;
 				justify-content: space-around;
@@ -93,7 +96,7 @@
 				bottom: 350px;
 			  }
 			  .head {
-	font-size: 1.8em;
+	font-size: 2.8em;
 	position: relative;
 }
 .footer_image {
@@ -105,7 +108,9 @@
 	display: flex;
 	justify-content: space-around;
 	position: relative;
-	bottom: 200px;
+	bottom: 20em;
+	background-color: black;
+	color: white;
 }
 			
 			</style>
@@ -133,13 +138,9 @@
 	}
 </script>
 			<div id="nav_bar">
-				<div class="cart">
-					<a href="./admincart.html" class="cart"><img src="car.png" alt="cart" width="25em" height="25em"
-							style="border-radius: 5em;">
-					</a>
-				</div>
+				
 				<div class="admin">
-					<a href="/admin/login" class="admin" style="text-decoration: none;">Admin</a>
+					<a href="/admin/login" class="admin" style="text-decoration: none;font-family:'Open Sans', sans-serif;font-weight: 400;font-size: 20px;">Admin</a>
 				</div>
 			</div>
 
@@ -150,7 +151,7 @@
 					<h1 id="headt" style="font-style: oblique;">Shoppers choice</h1>
 
 				</div>
-				<div id="nav_child2">
+				<div id="nav_child2" style="font-size: 20px;font-family:'Open Sans', sans-serif;font-weight: 400;">
 					<div class="nav_child">
 						<a href="/" style="text-decoration: none; color: black;">Home</a>
 					</div>
@@ -159,10 +160,10 @@
 
 					</div>
 					<% Customer customer=(Customer) session.getAttribute("customer"); if (customer==null) { %>
-						<div>
+						<!-- <div>
 							<a href="/aboutus" style="text-decoration: none; color: black;">About</a>
 
-						</div>
+						</div> -->
 
 						<div>
 							<a href="/customer/login" style="text-decoration: none; color: black;">Login</a>
@@ -175,11 +176,7 @@
 
 				</div>
 				<% } else { %>
-					<div id="nav_child3">
-						<a href="/customer/cart" class="cart"><img src="car.png" alt="cart" width="30em" height="30em"
-								style="border-radius: 5em;">
-						</a>
-					</div>
+				
 					<div>
 						<a href="/logout" style="text-decoration: none; color: white;">Logout</a>
 					</div>
@@ -195,33 +192,22 @@
 			</div>
 			<div class="ip">
 				<div class="chil">
-					<img src="https://cdn.pixabay.com/photo/2014/02/03/11/31/medications-257336_960_720.jpg" alt=""
+					<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt=""
 						width="600px" height="350px">
 				</div>
 				<div class="par">
 					<div class="ic">
-						<h1>How we started?</h1>
-						<p>
-							Our website was started due to people who are facing <br>problems
-							related to medicine which is out of stock <br>and to the
-							people who are unable to expalin <br>about their disease.We
-							decided to start our <br> company called PHARMA+ in 2022 and
-							now we <br> are providing medicines and utilities at the <br>
-							given time and there is no word for out of stock
+						<h1 style="font-size:1.5em ;">Our Mission</h1>
+						<p style="font-size: 16px;">
+							Shopperschoice OWN is our private label  that's designed by us, and <br>owned by you. If you're looking for head-turning styles that are  <br>one-of-a-kind ,shopperschoice OWN is what you should stock up on. <br> With the trendiest, freshest, and most unique styles from across India <br>and the world, Shopper's Choice invites you to express your personal <br> style fearlessly,  and with a confidence and optimism that  cannot be <br> easily shaken.
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="chil2">
 				<div class="chil4">
-					<h1>CONVINIENCE</h1>
-					<p>Heavy traffic, lack of parking, monsoons, shop closed,
-						forgetfulness… these are some of the reasons that could lead to
-						skipping of vital medications. Since taking medicines regularly is a
-						critical component of managing chronic medical conditions, it’s best
-						not to run out of essential medicines. Just log on to netmeds.com,
-						place your order online and have your medicines delivered to you –
-						without leaving the comfort of your home.</p>
+					<h1>Our Mission</h1>
+					<p>We bring you the trendiest and most exclusive brands from around the <br>world to your wardrobe. Forget scouring the net for   what's hot globally, <br>we've got you covered.If there's an occasion to express your  personal style, we've got a capsule collection to match. Shopping for a specific mood, event or style story has never been easier.</p>
 				</div>
 				<div class="chil3">
 					<img src="https://media.istockphoto.com/id/1220577245/photo/hand-to-hand-of-delivery-food-service-sending-delicious-from-restaurant-to-customer-without.jpg?b=1&s=170667a&w=0&k=20&c=5GdOziZwOvG3bf-_d20XCkuoEmRzh9geqQgVFObKLMo="

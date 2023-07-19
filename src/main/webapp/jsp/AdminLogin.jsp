@@ -126,7 +126,13 @@ input[id="user"] {
 	border-radius: 3px;
 	border-style: solid;
 }
-
+::placeholder{
+	position: relative;
+	left: 10px;
+}
+body{
+	background-image: linear-gradient(grey,white,grey);
+}
 input[id="pass"] {
 	border-color: black;
 	border-width: 1px;
@@ -194,12 +200,12 @@ input[value="Submit"] {
 
 
 	<div class="container-fluid">
-		<form action="/admin/login" method="post">
+		<form action="/admin/login" method="post" >
 			<table class="tab"
-				style="height: 300px; width: 300px; border-radius: 10px;">
+				style="height: 300px; width: 300px; border-radius: 10px;background-image: linear-gradient(brown,grey);">
 				<tr>
 					<th
-						style="font-size: 20px; font-style: normal; text-align: center;">
+						style="font-size: 20px; font-style: normal; text-align: center; position: relative; bottom: 20px;">
 						ADMIN LOGIN</th>
 				</tr>
 				<tr>

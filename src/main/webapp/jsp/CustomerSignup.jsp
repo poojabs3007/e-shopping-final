@@ -117,6 +117,7 @@ left: 5px;
             <tr>
                 <td class="td1"><label for="name"><strong>First Name :</strong></label></td>
                 <td><input type="text" name="fname" id="name" placeholder="First Name"></td>
+                <td><span id="fname"></span></td>
             </tr>
             <tr>
                 <td class="td1"><label for="lname"><strong>Last Name :</strong></label></td>
@@ -135,9 +136,8 @@ left: 5px;
                 <td><input type="password" name="pwd" id="pwd" placeholder="Password"></td>
             </tr>
             <tr>
-                <td class="td1"><label for="cpwd"><strong> Confirm <br>
-                    Password </strong>:</label></td>
-                <td><input type="password" name="" id="cpwd" placeholder="Confirm Password"></td>
+                <td class="td1"><label for="address"><strong> Address  </strong>:</label></td>
+                <td><input type="text" name="address" id="address" placeholder="Adress"></td>
             </tr>
             
             <tr>
@@ -151,5 +151,24 @@ left: 5px;
             
         </table>
     </form>
+
+    <script>
+         let user=document.getElementById('name').value;
+             if(user=="")
+        {
+            document.getElementById('fname').innerHTML="username cant be empty";
+            return false;
+        }
+        if((user.length<=3)||(user.length>20))
+        {
+            document.getElementById('fname').innerHTML="characters must be between 3 to 20";
+            return false;
+        }
+        if(!isNaN(user))
+        {
+            document.getElementById('fname').innerHTML="username cant be a numbers";
+            return false;
+        }
+    </script>
 </body>
 </html>

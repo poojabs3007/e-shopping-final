@@ -12,11 +12,10 @@
 	<%
 	String email = (String) request.getAttribute("customer");
 	%>
-	<h2>
-		OTP Validation for
-		<%=email%></h2>
 	<form action="/customer/verify" method="post">
-		<input type="number" name="otp" placeholder="Enter OTP">
+		<input type="text" id="email" name="email" value="<%=email%>"
+			readonly> <input type="number" name="otp"
+			placeholder="Enter OTP">
 		<button type="submit">Verify</button>
 		<button type="reset">Cancel</button>
 		<a href="/customer/resend/<%=email%>"><button type="button">Resend</button></a>

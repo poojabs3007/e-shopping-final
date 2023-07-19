@@ -9,9 +9,10 @@
 <title>Admin</title>
 <style>
 body {
-	background-image: url(../image/prbg1.jpg);
+	background-image: linear-gradient(to right,pink,#F4D160);
 	/* width: 10em; */
 	overflow: hidden;
+	background-color: yellow;
 }
 
 h1 {
@@ -32,7 +33,7 @@ h2 {
 
 nav {
 	/* width: 100%; */
-	background-color: white;
+	/* background-color: white; */
 }
 
 .container {
@@ -50,17 +51,20 @@ form {
 	background-color: white;
 	height: 18em;
 }
-
+a{
+	color: white;
+}
 .but1 {
-	background-color: greenyellow;
+	background-color: rgb(18, 19, 18);
 	height: 2.5em;
 	width: 13em;
 	border: 2em;
 	border-radius: 0.5em;
+	color: white;
 }
 
 .but2 {
-	background-color: aqua;
+	background-color: rgb(11, 12, 12);
 	height: 3.5em;
 	width: 13em;
 	border: 2em;
@@ -68,7 +72,7 @@ form {
 }
 
 .but3 {
-	background-color: red;
+	background-color: rgb(19, 18, 18);
 	height: 2.5em;
 	width: 13em;
 	border: 2em;
@@ -97,27 +101,27 @@ form {
 	}
 </script>
 
-	<h1 style="color: white;">ADMIN</h1>
+	<h1 style="color: rgb(20, 20, 20);text-decoration: none;">ADMIN</h1>
 	<div class="main">
-		<nav>
+		<nav style="">
 			<div class="container">
-				<div>
+				<div >
 					<a href="/jsp/Home.jsp"
-						style="text-decoration: none; font-size: 20px; color: black;">
+						style="text-decoration: none; font-size: 30px; color: rgb(10, 10, 10);font-weight: 800;">
 						Home </a>
 				</div>
 			</div>
 		</nav>
-		<hr>
+	<hr>
 
 		<table cellspacing="30em">
-           <tr><td ><strong><button class="but1"><a href="/admin/insert" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
-           <tr><td ><strong><button class="but1"><a href="/admin/products" style="text-decoration: none;font-size: 20px;color: black;">View all Product</a></button></strong></td></tr>
-           <tr><td><strong><button class="but2"><a href="/admin/update" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
-            <tr><td><strong><button class="but3"><a href="/admin/delete" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
-            <tr><td ><strong><button class="but1"><a href="/admin/customers" style="text-decoration: none;font-size: 18px;color: black;">view all customers</a></button></strong></td></tr>
+           <tr><td ><strong><button class="but1"><a href="/admin/insert" style="text-decoration: none;font-size: 20px;color: white;">Insert Product</a></button></strong></td></tr>
+           <tr><td ><strong><button class="but1"><a href="/admin/products" style="text-decoration: none;font-size: 20px;color: white;">View all Product</a></button></strong></td></tr>
+           <tr><td><strong><button class="but2"><a href="/admin/update" style="text-decoration: none;font-size: 20px;color: white;">Update Product</a></button></strong></td></tr>
+            <tr><td><strong><button class="but3"><a href="/admin/delete" style="text-decoration: none;font-size: 20px;color: white;">Delete Product</a></button></strong></td></tr>
+            <tr><td ><strong><button class="but1"><a href="/admin/customers" style="text-decoration: none;font-size: 18px;color: white;">view all customers</a></button></strong></td></tr>
         </table>
         
-		<a href="/logout"><button type="button" style="position: relative; left: 35px; top: 30px;">Logout</button></a>
+		<a href="/logout"><button type="button" style="position: relative; left: 35px; top: 30px;height: 30px;width: 100px;border-radius: 5px;background-color: rgb(216, 209, 209);">Logout</button></a>
 </body>
 </html>

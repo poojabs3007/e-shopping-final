@@ -83,6 +83,7 @@ public class CustomerController {
 	@PostMapping("verify")
 	public String verify(@RequestParam int otp, @RequestParam String email, Customer customer, ModelMap model)
 			throws Exception {
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"+email);
 		return customerService.verify(otp, email, customer, model);
 	}
 

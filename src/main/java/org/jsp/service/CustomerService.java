@@ -216,11 +216,24 @@ public class CustomerService {
 			for (Item item : customer.getCart().getItems()) {
 				price = price + (item.getPrice());
 			}
-			model.put("price", price);
-			model.put("payment", payment);
-			model.put("customer", customer);
 			customerRepository.save(customer);
-			return "Customer_billing";
+			if (payment.equals("card")) {
+				model.put("price", price);
+				model.put("payment", payment);
+				model.put("customer", customer);
+				return "Card_interface";
+			} else if (payment.equals("upi")) {
+				model.put("price", price);
+				model.put("payment", payment);
+				model.put("customer", customer);
+				return "Upi_interface";
+			} else if (payment.equals("cod")) {
+				model.put("price", price);
+				model.put("payment", payment);
+				model.put("customer", customer);
+				return "Customer_billing";
+			}
+			return "";
 		}
 	}
 
@@ -237,6 +250,7 @@ public class CustomerService {
 
 	public String verify(int otp, String email, Customer customer, ModelMap model) {
 		Customer exist = customerRepository.findByEmail(email);
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++"+exist);
 		if (exist != null) {
 			OtpDto otp2 = otp_service.getOtp(email);
 			if (otp2 != null) {

@@ -15,7 +15,10 @@
 						<link rel="preconnect" href="https://fonts.googleapis.com">
 						<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 						<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+							integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+							crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 							rel="stylesheet"
@@ -28,10 +31,11 @@
 								font-weight: 400;
 							}
 
+
 							#nav_bar {
 								width: 100vw;
 								height: 3em;
-								background-color: rgb(110, 107, 107);
+								background-color: rgb(107, 21, 28);
 								display: flex;
 								justify-content: end;
 								align-items: center;
@@ -70,7 +74,8 @@
 							#nav_main {
 								width: 100vw;
 								height: 6em;
-								background-color: rgb(218, 205, 214);
+								background-color: gray;
+								color: white;
 								display: flex;
 								justify-content: center;
 								align-items: center;
@@ -91,6 +96,7 @@
 								align-items: center;
 								font-size: 1.3em;
 								font-family: 'Times New Roman', Times, serif;
+								margin-right: 60px;
 							}
 
 							.nav_child:hover {
@@ -131,8 +137,8 @@
 								width: 30%;
 								border: 1px soli black;
 								border-style: none;
-                               text-align: center;
-							   padding-top: 60px;
+								text-align: center;
+								padding-top: 60px;
 								/* margin: auto;
 								display: flex;
 								flex-wrap: wrap;
@@ -145,14 +151,18 @@
 								height: 280px;
 							}
 
+
 							.container {
 								display: flex;
 								flex-wrap: wrap;
-								
+
 								justify-content: space-around;
 								position: relative;
 								top: 20em;
 							}
+							/* body{
+								background-color: rgb(230, 222, 222);
+							} */
 
 							.footer_image {
 								display: inline-grid;
@@ -173,14 +183,20 @@
 							.container {
 								display: flex;
 								justify-content: space-around;
-								position: relative;
-								top: 15em;
+								/* position: relative;
+								top: 15em; */
+								width: 100%;
 							}
 
 							.footer_image {
 								display: inline-grid;
 								grid-template-columns: auto auto auto auto;
 								column-gap: 0.5em;
+							}
+
+							.log {
+								position: relative;
+								right: 100px;
 							}
 
 							a {
@@ -192,7 +208,8 @@
 								font-size: 1.8em;
 								position: relative;
 							}
-							.child_product_container1{
+
+							.child_product_container1 {
 								position: relative;
 								top: 30%;
 							}
@@ -200,25 +217,9 @@
 					</head>
 
 					<body>
-							<h1 id="successMessage" style="color: green">${pass}</h1>
-	<h1 id="failMessage" style="color: red">${fail}</h1>
-	<script>
-	// Get the success and fail message elements
-	var successMessage = document.getElementById("successMessage");
-	var failMessage = document.getElementById("failMessage");
-
-	// Check if the success message exists and display it as a pop-up alert
-	if (successMessage.innerText !== "") {
-		window.alert(successMessage.innerText);
-		successMessage.style.display = "none"; // Hide the success message element
-	}
-
-	// Check if the fail message exists and display it as a pop-up alert
-	if (failMessage.innerText !== "") {
-		window.alert(failMessage.innerText);
-		failMessage.style.display = "none"; // Hide the fail message element
-	}
-</script>
+						<h1 id="successMessage" style="color: green">${pass}</h1>
+						<h1 id="failMessage" style="color: red">${fail}</h1>
+						
 						<div id="nav_bar">
 							<!-- <div class="cart">
 								<a href="./admincart.html" class="cart"><img src="car.png" alt="cart" width="25em"
@@ -239,64 +240,54 @@
 							</div>
 							<div id="nav_child2">
 								<form action="/customer/search" method="post">
-								<input type="search" placeholder="Search" name="product"><button href="" style="background-color: white;border:none; width: 25px; position: absolute;left:40%;top:35%" >
-							<i style="color: black; position: relative ;right:20%" class="fa-solid fa-magnifying-glass"></i>
-								</button>
+									<input type="search" placeholder="Search" name="product" style="border-radius: 5px;"><button href=""
+										style="background-color: white;border:none; width: 25px; position: absolute;left:37%;top:34%">
+										<i style="color: ; position: relative ;right:20%"
+											class="fa-solid fa-magnifying-glass"></i>
+									</button>
 								</form>
-								</div>
+							</div>
 							<div id="nav_child2">
 								<div class="nav_child">
-									<a href="/" style="text-decoration: none; color: black;">Home</a>
+									<a href="/" style="text-decoration: none; color: white;">Home</a>
 								</div>
 								<div>
 									<a href="/customer/products"
-										style="text-decoration: none; color: black;">Products</a>
+										style="text-decoration: none; color: white;">Products</a>
 
 								</div>
 								<% Customer customer=(Customer) session.getAttribute("customer"); if (customer==null) {
 									%>
 									<div>
-										<a href="/aboutus" style="text-decoration: none; color: black;">About</a>
+										<a href="/aboutus" style="text-decoration: none; color: white;">About</a>
 
 									</div>
 
 									<div>
-										<a href="/customer/login" style="text-decoration: none; color: black;">Login</a>
+										<a href="/customer/login" style="text-decoration: none; color: white;">Login</a>
 
 									</div>
 									<div>
 										<a href="/customer/signup"
-											style="text-decoration: none; color: black;">SignUp</a>
+											style="text-decoration: none; color: white;">SignUp</a>
 
 									</div>
 
 							</div>
 							<% } else { %>
 								<div id="nav_child3">
-									<a href="/customer/cart" class="cart"><img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="cart" width="30em"
-											height="30em" style="border-radius: 5em;">
+									<a href="/customer/cart" class="cart"><img
+											src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="cart"
+											width="40em" height="30em">
 									</a>
 								</div>
 								<div>
-									<a href="/logout" style="text-decoration: none; color:black;">Logout</a>
+									<a class="log" href="/logout" style="text-decoration: none; color:black;">Logout</a>
 								</div>
 								<% } %>
 
 						</section>
 
-						<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-									<img src="bb1.avif" class="d-block w-100" alt="..." height="500em">
-								</div>
-								<div class="carousel-item">
-									<img src="bb2.avif" class="d-block w-100" alt="..." height="500em">
-								</div>
-								<div class="carousel-item">
-									<img src="bb3.avif" class="d-block w-100" alt="..." height="500em">
-								</div>
-							</div>
-						</div> -->
 						<div class="product_container">
 
 							<div class="child_product_container">
@@ -306,8 +297,9 @@
 
 										<div class="child_product_container1">
 											<% String base64=Base64.encodeBase64String(prod.getImg()); %> <img
-													height="300px" width="100%" alt="unknown"
-													src="data:image/jpeg;base64,<%=base64%>" style="position: relative;top: 40%;display: flex;justify-content: space-around;">
+													height="350px" width="80%" alt="unknown"
+													src="data:image/jpeg;base64,<%=base64%>"
+													style="position: relative;top: 30%;left:10%;box-shadow:5px 5px 10px grey;display: flex;justify-content: space-between;">
 												<h5 style="position: relative;top: 200px;">
 													<%=prod.getName() %>-<%=prod.getBrand() %>
 												</h5>
@@ -328,8 +320,8 @@
 
 						</div>
 						<!-- footer -->
-						<footer>
-							<div class="container">
+						<footer style="width: 100%;">
+							<div class="container" style="background-color: black;position: relative;z-index: 10;color:white; width: 100vw;">
 								<div class="item1">
 									<div style="font-size: 1.8em;">Shoppers Choice</div>
 									<p style="line-height: 2em;">
@@ -348,20 +340,19 @@
 									<p>Saturday:10.00-19.00</p>
 
 									<div class="footer_image">
-					<a
-						href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D1007768%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMI5pnu1IH8_wIVrSeDAx1-4Q6tEAAYASAAEgJxTvD_BwE">
-						<img src="/main/webapp/images/facebook.png" alt="" height="30px" width="30px"
-						class="footer_image1">
-					</a> <a href="https://www.instagram.com/accounts/login/"><img
-						src="./images/insta.png" alt="" height="30px" width="30px"
-						class="footer_image2"></a> <a
-						href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"><img
-						src="./images/twitter.png" alt="" height="30px" width="30px"
-						class="footer_image3"></a> <a
-						href="https://telegr.am/user_mgt/login"> <img
-						src="./images/telegram.png" alt="" height="30px" width="30px"
-						class="footer_image4"></a>
-				</div>
+										<a
+											href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D1007768%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMI5pnu1IH8_wIVrSeDAx1-4Q6tEAAYASAAEgJxTvD_BwE">
+											<img src="../images/facebook.png" alt="" height="30px" width="30px"
+												class="footer_image1">
+										</a> <a href="https://www.instagram.com/accounts/login/"><img
+												src="../images/insta.png" alt="" height="30px" width="30px"
+												class="footer_image2"></a> <a
+											href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"><img
+												src="../images/twitter.png" alt="" height="30px" width="30px"
+												class="footer_image3"></a> <a href="https://telegr.am/user_mgt/login">
+											<img src="../images/telegram.png" alt="" height="30px" width="30px"
+												class="footer_image4"></a>
+									</div>
 								</div>
 								<div class="item3">
 									<div class="head">Contact Us</div>
@@ -371,7 +362,23 @@
 								</div>
 							</div>
 						</footer>
+						<script>
+							// Get the success and fail message elements
+							var successMessage = document.getElementById("successMessage");
+							var failMessage = document.getElementById("failMessage");
 
+							// Check if the success message exists and display it as a pop-up alert
+							if (successMessage.innerText !== "") {
+								window.alert(successMessage.innerText);
+								successMessage.style.display = "none"; // Hide the success message element
+							}
+
+							// Check if the fail message exists and display it as a pop-up alert
+							if (failMessage.innerText !== "") {
+								window.alert(failMessage.innerText);
+								failMessage.style.display = "none"; // Hide the fail message element
+							}
+						</script>
 
 
 
